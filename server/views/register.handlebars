@@ -1,0 +1,28 @@
+<div class="container" [@StartEndState]="'in'" >
+  <div style="max-width:500px;margin:50px auto;" *ngIf="resultMsg.display" class="alert" [class.alert-danger]="!resultMsg.resultType" [class.alert-success]="resultMsg.resultType">{{resultMsg.body}}</div>
+  <form method="post" action="/register" style="max-width:500px;margin:50px auto;">
+    <div class="form-group">
+          <label for="Name">Name</label>
+          <input class="form-control" id="Name" type="text" name="userData.name" [(ngModel)]="userData.name"  />
+    </div>
+    <div class="form-group">
+          <label for="userName">Username</label>
+          <input class="form-control" id="userName" type="text" name="userData.username" [(ngModel)]="userData.username"  />
+    </div>      
+    <div class="form-group">
+      <label for="userMail">Email</label>
+      <input class="form-control" id="userMail" type="email" name="userData.email" [(ngModel)]="userData.email"  />
+    </div>
+    <div class="form-group">
+        <label for="userPass">Password</label>
+      <input class="form-control" id="userPass" type="password" name="userData.password" [(ngModel)]="userData.password" />
+    </div>
+    <div class="form-group">
+        <label for="userCPass">Confirm Password</label>
+      <input class="form-control" id="userCPass" type="password" name="userData.confirmPassword" [(ngModel)]="userData.confirmPassword" />
+    </div>
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-success" value="Submit">
+    </div>
+  </form>
+</div>
